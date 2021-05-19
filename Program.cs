@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Thank you for viewing my first program!
+ *
+ * I have never programmed prior so this is all very new to me.
+ * If you see anything that could make my calculator better, please do not hesitate with your suggestions!
+ * 
+ * Kind regards, Oscar.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,34 +20,38 @@ namespace Matematik
         static void Main(string[] args)
         {
 
-            int firstNum;
-            int secondNum;                   //Variables for equation
+            decimal firstNum;
+            decimal secondNum;
             string operation;
-            int answer;
+            decimal answer;
             string Userchoice;
-            
 
-            do //Kører Userchoice variablen for valg om start eller ej af selve programmet.
+
+            do //User choice of whether to run or exit the program 
             {
-                Console.WriteLine("Tryk M for at starte lommeregneren \nEller tryk A for at afslutte");
+                Console.WriteLine("\n\n\n\n\t\t\t\t\tPress 'M' followed by 'Enter' to run \n\n\t\t\t\t\tOr press 'A' followed by 'Enter' to exit");
                 Userchoice = Console.ReadLine();
                 Userchoice = Userchoice.ToUpper();
-                if (Userchoice == "M") //Man har accepteret start af lommeregner og funktionen er igang
+                Console.Clear();
+                if (Userchoice == "M") //Runs calculator
                 {
-
-                    Console.WriteLine("\n\n\t\t\t\t     Hej og velkommen til Oscars første lommeregner.");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("\n\n\t\t\t\t     Hello and welcome to my first simple calculator!");
                     Console.WriteLine("\n\n\t\t\t\t\t ------------------------------------");
-                    Console.WriteLine("\n\n\t\t\t\t\t   Tryk 'Enter' for at komme igang!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n\n\t\t\t\t\t   Press 'Enter' to get started.");
                     Console.ReadLine();
 
+                    Console.Clear();
+
                     Console.Write("Enter the first number in your basic equation: ");
-                    firstNum = Convert.ToInt32(Console.ReadLine());
+                    firstNum = Convert.ToDecimal(Console.ReadLine());
 
                     //User input for equation
-                    Console.Write("Skriv dit første hele tal: ");
-                    secondNum = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter the second number in your basic equation: ");
+                    secondNum = Convert.ToDecimal(Console.ReadLine());
                     Console.WriteLine("\n\t\t__________________________________________________________________________________________");
-                    Console.Write("\n\t\t          Vælg om du vil gange, dividere, plus eller minus -> ( x , / , +, -) ");
+                    Console.Write("\n\t\t          Input your type of subject for your equation -> ( x , / , +, -) ");
                     operation = Console.ReadLine();
 
                     if (operation == "x")
@@ -81,7 +94,7 @@ namespace Matematik
 
                 }
 
-            } while (Userchoice != "A");
+            } while (Userchoice != "A"); //The calculator is running if the user pressed 'M'
 
             Console.ReadKey();
         }
